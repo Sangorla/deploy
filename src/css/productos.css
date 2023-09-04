@@ -1,0 +1,13 @@
+
+
+div{
+    background-color: rgb(171, 245, 171);
+}
+
+
+
+.miEstilo{
+    display: flex;
+    flex-direction: row;
+    width: 65%;
+}

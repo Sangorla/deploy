@@ -1,0 +1,30 @@
+
+
+Rutas en React con React Router Dom
+
+1. Instalamos la librería  react-router-Dom
+npm i react-router-dom
+
+2. Importamos el BrowserRouter en el index.js (en vite se llama main.jsx) de la app
+import { BrowserRouter } from "react-router-dom";
+
+3. Pedimos al BrowserRouter que administre las Rutas
+
+root.render(
+  <BrowserRouter>
+    <App />
+  </BrowserRouter>
+);
+
+4. importamos la configuración de las rutas en App.js (App.jsx en Vite)
+    import {Routes, Route } from "react-router-dom"
+
+5. Configuramos las rutas en App.js
+    <Routes>
+      <Route path="/principal" element={ <Principal />}></Route>
+      <Route path="/main" element={ <Main />}></Route>
+    </Routes>
+
+6. Linkeamos las rutas con el componente en la barra de navegación (Navegador.jsx)
+    import { Link } from "react-router-dom"
+    <Link to="/principal"> Principal </Link>
