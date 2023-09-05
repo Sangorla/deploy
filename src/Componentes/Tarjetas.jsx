@@ -8,12 +8,9 @@ function Tarjetas({personaje}) {
             <Card.Body>
                 <Card.Title>{personaje.name}</Card.Title>
                 <Card.Text>
-                {personaje.species}
+                    {personaje.species}
                 </Card.Text>
-                <Card.Text>
-                {personaje.status}
-                </Card.Text>
-                <Button variant="primary">Ver más info</Button>
+                <Button variant="primary">{personaje.status}</Button>
             </Card.Body>
         </Card>
     );

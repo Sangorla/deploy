@@ -1,60 +1,58 @@
-import React, { useState, useEffect } from "react";
-import Button from "react-bootstrap/Button";
-import { Row, Col } from "react-bootstrap";
+
+import { useState, useEffect } from "react";
+import Button from 'react-bootstrap/Button'
+import { Row, Col } from 'react-bootstrap'
 import Tarjetas from "./Tarjetas";
 
 
-const ApiDos = () => {
-    const URL = "https://rickandmortyapi.com/api/character"
 
-    //const URLDOS = process.env.REACT_APP_URL
+const ApiDos = () =>{
 
-    console.log(process.env.REACT_APP_URL);
+    const misDatos = process.env.REACT_APP_URL
 
     const [personajes, setPersonajes] = useState([]);
 
-
-    useEffect(() => {
-        fetch(URL)
-        //fetch(URLDOS)
+    useEffect(()=>{
+        fetch('https://rickandmortyapi.com/api/character')
+        /* 2. fetch(URL) */
+        /* 3.  */
+        /* fetch(URLDOS) */
         .then(respuesta => respuesta.json())
         .then(respuesta => setPersonajes(respuesta.results))
-        
+        /* .then(respuesta => console.log(personaje)) */
     }, [])
 
-    const imprimir = () => {
-        console.log("Estamos usando eventos en React");
-        alert("Estamos usando eventos en React");
+
+    const imprimir = () =>{
+        console.log('Estamos usando eventos en React');
+        alert('Estamos usando eventos en React');
         console.log(personajes);
-
     }
-    
-    return (
-        <div className="container">
-            <div className="align-items-center">
-                <h1 className="text-center m-4">Api externa</h1>
-                <div className="text-center">
 
-            <Button className="w-75 m-4" onClick={imprimir}>Imprimir datos en consola</Button>
-                </div>
-                <h2 className="text-center m-4">
-                    Personajes de la serie
-                </h2>
+
+    return(
+        <div className='container'>
+            <div>
+            <h1 className='text-center m-4'>Api Rick</h1>
+            
+            <div className='text-center'>
+                <Button className='w-75 m-4' onClick={ imprimir }>Imprimir Datos en Consola</Button>
+            </div>
+            <h2 className='text-center m-4'>
+                Personajes de la Serie
+            </h2>
+
                 <Row>
-                {personajes.map((personaje) => (
-                        <Col key={personaje.id}>
-                            <Tarjetas personaje={personaje} />
-
-                            
-                        </Col>
-                ))}
-                    
+                    {personajes.map((personaje) => (
+                            <Col key={personaje.id}>
+                                <Tarjetas personaje={personaje} />
+                            </Col>
+                    ))}
                 </Row>
-
-
+                
             </div>
         </div>
-    );
+    )
 }
 
 export default ApiDos;

@@ -1,14 +1,16 @@
-ul {
+
+
+ul{
     display: flex;
     justify-content: end;
 }
 
-a {
+a{
     text-decoration: none;
 }
 
-li {
+li{
     list-style: none;
     padding: 10px;
-    margin: 5px;
+    margin: 15px;
 }
